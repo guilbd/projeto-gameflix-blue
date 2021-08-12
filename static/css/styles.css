@@ -1,0 +1,830 @@
+@import url("../css/header-footer.css");
+
+:root {
+  --primary-color: #0d1117;
+  --colorTwo: #5c5c5c;
+  --colorWhite: #e5e5e5;
+
+  --tileBorderRadius: 5px;
+}
+* {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+/* Inicio da Estilização da pagina de Login */
+/* Logomarca do topo - alinhamento e tamanho  */
+
+.logomarca img {
+  padding-top: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+/* Determinar qual tipo de dado entrará na formBox e formatação da mesma */
+
+.LoginBox input[type=text],
+.LoginBox input[type=password] {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #771e1e;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  background-color: transparent;
+}
+
+/* Estilização da caixa central principal */
+
+.LoginBox {
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  color: #F1F1F2;
+  flex-direction: column;
+  width: 25%;
+
+}
+
+/* Estilização dos botões da caixa central principal */
+
+.LoginBox button {
+  font-weight: bold;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 2%;
+  margin-left: 25%;
+  border: none;
+  width: 30%;
+  cursor: pointer;
+}
+
+/* Estilização ao passar o mouse sobre os botões da caixa central principal */
+
+.LoginBox button:hover {
+  opacity: 0.7;
+}
+
+/* Estilização da caixa central secundaria*/
+
+.LoginInfo {
+  padding: 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilização do campo de ajuda, abaixo da caixa principal */
+
+.helpLinks li a {
+
+  font-size: 15px;
+  color: #f5f5f5;
+  text-decoration: none;
+
+}
+
+.helpLinks li a:hover {
+  transition: color 1s;
+  text-transform: uppercase;
+  color: #f30000;
+  font-size: 16px;
+}
+
+.helpLinks {
+
+  text-align: center;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  list-style: none;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7.4rem;
+  padding-top: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Fim da Estilização da pagina de Login */
+
+
+
+
+
+/* Inicio da Estilização de Cadastrar e Editar novos jogos */
+
+.infoJogo {
+  display: grid;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  color: #aaa;
+
+}
+
+/* Posicionamento de cada elemento utilizando conceitos Grid */
+
+#nomeAdd {
+  grid-column: 1/4;
+  grid-row: 1;
+}
+
+#produtoraAdd {
+  grid-column: 4/5;
+  grid-row: 1;
+}
+
+#lancamentoAdd {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#notaAdd {
+  grid-column: 2/4;
+  grid-row: 2;
+}
+
+#generoaAdd {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+#caixasdeOpcoes {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+#descricaoAdd {
+  grid-column: 1/5;
+  grid-row: 3;
+}
+
+#descricaoAdd input {
+  height: 20rem;
+}
+
+#midiaAdd {
+  grid-column: 1/5;
+  grid-row: 4;
+}
+
+/* Estilização de caixas de opções */
+
+.caixasdeOpcoes option {
+  background-color: #0d1117;
+  color: #F1F1F2;
+}
+
+/* Estilização de inputs */
+
+.infoJogo input,textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  margin: 8px 0;
+  border: 1px solid rgb(134, 7, 7);
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  background-color: transparent;
+}
+.infoJogo textarea {
+  height: 13rem;
+
+}
+/*Inicio da Estilização de botão cadastrar  da Pag de cadastro de novos jogos */
+
+#botao-cadastro {
+  align-items: center;
+  font-weight: bold;
+  margin: 1%;
+  margin-left: 40%;
+  color: #F1F1F2;
+  width: 20%;
+  background-color: #04AA6D;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#botao-cadastro:hover {
+
+  opacity: 0.9;
+  
+}
+/* Estilização de botões da Pag de Edição */
+
+#botao-aplicar-edicao {
+  align-items: center;
+  font-weight: bold;
+  margin: 1%;
+  margin-left: 40%;
+  color: #F1F1F2;
+  width: 20%;
+  background-color: #04AA6D;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#botao-aplicar-edicao:hover {
+
+  opacity: 0.9;
+}
+#botao-editando-cancel {
+  font-weight: bold;
+  margin: 1%;
+  margin-left: 40%;
+  color: #F1F1F2;
+  width: 20%;
+  background-color: #f30000;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+
+}
+#botao-editando-cancel:hover {
+
+  opacity: 0.9;
+}
+/* Fim da Estilização de Cadastrar e Editar novos jogos */
+
+
+
+
+
+/*Inicio da Estilização de botão cadastrar  da Pag de cadastro de novos usuarios */
+/* Estilização das caixas de input, usando modelo grid  */
+.infoUser {
+  display: grid;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  color: #aaa;
+
+}
+/* Posicionamento de cada elemento utilizando conceitos Grid */
+#nomeUserAdd {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+#birthUserAdd {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+#cpfUserAdd {
+  grid-column: 3;
+  grid-row: 2;
+}
+#emailUserAdd {
+  grid-column: 1;
+  grid-row: 2;
+
+}
+#celularlUserAdd {
+  grid-column: 2;
+  grid-row: 2;
+
+}
+#passwordUserAdd {
+  grid-column: 1/3;
+  grid-row: 3;
+}
+
+/* Estilização de inputs */
+.infoUser input {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  margin: 8px 0;
+  border: 1px solid rgb(134, 7, 7);
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  background-color: transparent;
+}
+/* Estilização de botão cadastrar  da Pag de cadastro de novos usuarios*/
+#botaoRegistroUser {
+  align-items: center;
+  font-weight: bold;
+  margin: 1%;
+  margin-left: 40%;
+  color: #F1F1F2;
+  width: 20%;
+  background-color: #04AA6D;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+}
+#botaoRegistroUser:hover {
+
+  opacity: 0.9;
+}
+/* Fim da Estilização de botão cadastrar  da Pag de cadastro de novos usuarios */
+
+
+
+
+/* Inicio da estilização da pagina gerenciar Jogos */
+.tabela {
+  table-layout:fixed;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  border: 1px solid #771e1e;
+  border-collapse: collapse;
+  color: #F1F1F2;
+  background:#1A1A1A;
+  font-size:13px;
+}
+.tabela textarea{
+  font-size:13px;
+  margin:0.5rem;
+  height:11rem;
+  width:15rem;
+}
+.tabela iframe{
+  padding:0.5rem;
+}
+/* Blocos de Tabela - head */
+#tableIdHead{
+  width: 3rem;
+}
+#tableNameHead {
+  width: 12rem;
+}
+#tableDescriptionHead {
+  width: 17rem;
+}
+#tableGradeHead{
+  width: 4rem
+
+}
+#tableParentalHead {
+  width: 8rem;
+}
+#tableGenderHead{
+  width: 6rem;
+}
+#tableReleaseHead {
+  width: 6rem;
+}
+#tableProducerHead {
+  width: 10rem;
+}
+#tableTrailerHead {
+  width: 16.5rem;
+}
+#tableIMGHead{
+  width: 13rem;
+}
+#tableLogoHead{
+  width: 13rem;
+}
+#tableToolsHead{
+  width: 10rem;
+}
+/* Blocos de Tabela - Conteudo */
+.tabela_conteudo{
+  overflow-wrap: break-word;
+}
+.tabela_conteudo iframe{
+  padding-top: 0.5rem;
+}
+.tabela_conteudo img{
+  padding-top: 0.5rem;
+  width: 9rem;
+}
+
+.tabela td {
+  padding: 0.1rem;
+  border: 1px solid #771e1e;
+  background-color: #1A1A1A;
+}
+
+.tabela th {
+  padding: 0.3rem;
+  height: 1rem;
+}
+
+.addNovoTituloBotao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+
+}
+.listaBotoesGerenciamento{
+  margin: 1rem;
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  font-weight: bold;
+  justify-content: flex-start;
+  list-style: none;
+  
+}
+.listaBotoesGerenciamento img{
+  width: 1.6rem;
+}
+.listaBotoesGerenciamento ul{  
+  line-height: 1.5;
+}
+.listaBotoesGerenciamento li{
+  text-align: center;
+  font-size: 10px;
+}
+
+.botaoTool{
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+.botaoTool:hover {
+  opacity: 0.91;
+}
+.botaoTool img:hover {
+  transform:scale(1.2)
+}
+.botaoTitle {
+
+  background-color: #f30000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 0.4rem;
+  margin: 5px;
+  font-size: 15px;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
+}
+
+.botaoTitle:hover {
+  opacity: 0.91;
+}
+
+
+.botao-cadastro {
+  align-items: center;
+  font-weight: bold;
+  margin: 2%;
+  margin-left: 40%;
+  color: #F1F1F2;
+  flex-direction: column;
+  width: 20%;
+  background-color: #04AA6D;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+
+}
+
+/* Fim da estilização da página gerenciar Jogos */
+
+
+
+
+/* Inicio da estilização da pagina Contact */
+
+.contato{
+  display: grid;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  color: #aaa;
+
+}
+
+.contato input,textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  margin: 8px 0;
+  border: 1px solid rgb(134, 7, 7);
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  background-color: transparent;
+}
+
+.contato textarea {
+  height: 10rem;
+}
+
+/* Posicionamento de cada elemento utilizando conceitos Grid */
+
+#nomeContato {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+#celularContato{
+  grid-column:3;
+  grid-row: 1;
+}
+#emailContato{
+  grid-column: 1/3;
+  grid-row: 2;
+}
+#msgContato input {
+  height: 30rem;
+}
+#msgContato {
+  grid-column: 1/6;
+  grid-row: 3;
+}
+
+#botao-contato {
+  align-items: center;
+  font-weight: bold;
+  margin: 1%;
+  margin-left: 40%;
+  color: #F1F1F2;
+  width: 80%;
+  background-color: #04AA6D;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#botao-contato:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+
+/* Fim da estilização da pagina contato */
+
+/* Estilização página todos os jogos */
+
+section#jogos{
+  color: #f5f5f5;
+}
+
+div#card img {
+  width: 300px;
+  margin-left: 50px;
+}
+
+div#card a{
+  font-size: 15px;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+
+
+/* Banner Image */
+.slide-head{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+.nslider{
+  position:relative;
+  width: 100%;
+}
+
+.myslider{
+  height:655px;
+  display: none;
+  overflow: hidden;
+}
+
+.prev, .next{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 50px;
+  padding: 15px;
+  cursor: pointer;
+  color:#e5e5e5;
+  transition: 0.1s;
+  user-select: none;
+}
+
+.prev:hover, .next:hover{
+  color:gray;
+}
+
+.next{
+  right: 0;
+}
+
+.dotsbox{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom:20px;
+  cursor: pointer;
+}
+
+.dot{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.active, .dot:hover{
+  border-color: #f30000; 
+}
+
+.fade{
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+@keyframes fade{
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+#content-img{
+  transform: scale(1.5, 1.5);
+  -webkit-animation-name: zoomin;
+  -webkit-animation-duration: 30s;
+  animation-name: zoomin;
+  animation-duration: 30s;
+}
+
+@keyframes zoomin{
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.5, 1.5);}
+}
+
+@-webkit-keyframes zoomin{
+  from {transform: scale(1,1);}
+  to {transform: scale(1.0, 1.0);}
+}
+
+
+
+
+/* sessão dos jogos */
+.thumbSection {
+  padding-top: 4%;
+  color: var(--colorWhite);
+}
+
+.thumbTitle {
+  font-size: 20px;
+  line-height: 14px;
+  font-weight: 500;
+  margin: 0 4% 12px;
+}
+
+.thumbTiles.swiper-container {
+  padding: 0 4%;
+}
+
+.thumbTile {
+  width: 20%;
+}
+
+.thumbTile__image {
+  width: 100%;
+  border-radius: var(--tileBorderRadius);
+}
+
+.thumbTiles .swiper-button-prev,
+.thumbTiles .swiper-button-next {
+  height: 100%;
+  width: 4%;
+  width: calc(4% - 5px);
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+}
+
+.thumbTiles .swiper-button-prev {
+  left: 0;
+  border-top-right-radius: var(--tileBorderRadius);
+  border-bottom-right-radius: var(--tileBorderRadius);
+}
+
+.thumbTiles .swiper-button-next {
+  right: 0;
+  border-top-left-radius: var(--tileBorderRadius);
+  border-bottom-left-radius: var(--tileBorderRadius);
+}
+
+.thumbTiles .swiper-button-prev::after,
+.thumbTiles .swiper-button-next::after {
+  color: #fff;
+  font-size: 4vw;
+  font-weight: bold;
+  transition: transform 0.1s ease-out;
+}
+
+.thumbSection .swiper-wrapper{
+  padding: 30px 0;
+}
+
+.thumbSection .swiper-slide{
+  transition: 250ms all;
+}
+
+.thumbSection .swiper-slide:hover{
+  transform: scale(1.2);
+  z-index:1;
+}
+
+.thumbSection .swiper-slide:first-child:hover{
+  margin: 0 30px;
+}
+
+.thumbSection .swiper-slide:last-child:hover{
+  margin: 0 -30px;
+}
+
+.thumbSection .swiper-slide:nth-child(6):hover{
+  margin: 0 -30px;
+}
+
+/* pop up */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;900&display=swap');

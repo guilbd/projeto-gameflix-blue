@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMEFLIX | Gerenciar Títulos</title>
+  <link rel="shortcut icon" href="../static/img/favicon.ico">
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+<body>
+  <!--HEADER CONTENT-->
+  <div id="nav"></div>
+  <div class="logomarca">
+    <img src="/static/img/logomarca.svg" alt="Logomarca Gameflix">
+  </div>
+
+  <!--MAIN CONTENT-->
+  <div class="addNovoTituloBotao"><a href="/cadastro-jogos" class="botaoTitle">ADICIONAR NOVO TÍTULO </a><br><br></div>
+
+  <table class="tabela">
+    <thead>
+      <tr class="tabela_header">
+
+        <th id="tableIdHead">ID</th>
+        <th id="tableNameHead">NOME</th>
+        <th id="tableDescriptionHead">DESCRIÇÃO</th>
+        <th id="tableParentalHead">CLASSIFICAÇÃO</br> ETÁRIA</th>
+        <th id="tableGradeHead">NOTA</th>
+        <th id="tableGenderHead">GÊNERO</th>
+        <th id="tableReleaseHead">LANÇAMENTO</th>
+        <th id="tableProducerHead">PRODUTORA</th>
+        <th id="tableTrailerHead">TRAILER</th>
+        <th id="tableIMGHead">IMAGEM</th>
+        <th id="tableLogoHead">LOGO</th>
+        <th id="tableToolsHead">FERRAMENTAS</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <!-- for para exibição em tabela dos jogos cadastrados dentro do BD -->
+      {% for p in jogos %}
+      <tr class="tabela_conteudo">
+        <td id="tableIdContent">{{p.id}}</td>
+        <td id="tableNameContent">{{p.nomeJogo}}</td>
+        <td id="tableDescriptionContent"><textarea style="resize: none" readonly>{{p.descricao}}</textarea> </td>
+        <td id="tableParentalContent">{{p.classificacao}}</td>
+        <td id="tableGradeContent">{{p.notaMetric}}</td>
+        <td id="tableGenderContent">{{p.genero}}</td>
+        <td id="tableReleaseContent">{{p.dataLancamento}}</td>
+        <td id="tableProducerContent">{{p.produtora}}</td>
+        <td id="tableTrailerContent"> <iframe width="240" height="135" src="{{p.trailler}}" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </td>
+        <td id="tableIMGContent"><img src="{{p.imagemLink}}" alt=""></td>
+        <td id="tableLogoContent"><img src="{{p.logoLink}}" alt=""></td>
+        <td>
+          <ul class="listaBotoesGerenciamento">
+            <li><a href="/read" class="botaoTool">VISUALIZAR</br><img src="/static/img/view.png"
+                  alt="Ícone de visualização"></a></li>
+            </br>
+            <li><a href="/delete/{{p.id}}" class="botaoTool">REMOVER</br><img src="/static/img/trash.png"
+                  alt="Ícone de exclusão"></a></li>
+            </br>
+            <li><a href="/edit/{{p.id}}" class="botaoTool">EDITAR</br><img src="/static/img/edit.png"
+                  alt="Ícone de edição"></a></li>
+          </ul>
+          
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <!-- Formulario de edição  -->
+    {% if jogosEdit != undefined %}
+
+    <form action="/edit/{{jogosEdit.id}}" method="post">
+      <div class="infoJogo">
+
+        <div id="nomeAdd">
+          <p>Nome do título</p>
+          <input type="text" placeholder="Nome do título" name="nomeJogo" id="game_name" value="{{jogosEdit.nomeJogo}}">
+        </div>
+
+        <div id="produtoraAdd">
+          <p>Produtora</p>
+          <input type="text" placeholder="Produtora" name="produtora" id="game_producer"
+            value="{{jogosEdit.produtora}}">
+        </div>
+
+        <div id="lacamentoAdd">
+          <p>Lançamento</p>
+          <input id="ano" type="number" name="dataLancamento" value="{{jogosEdit.dataLancamento}}">
+        </div>
+
+        <div id="notaAdd">
+          <p>Nota Metacritic</p>
+          <input type="number" placeholder="0-100 " name="notaMetric" id="game_grade" value="{{jogosEdit.notaMetric}}">
+        </div>
+        <div class="caixasdeOpcoes">
+          <div id="idadeRecomendadaAdd">
+            <p>Classificação Indicativa</p>
+            <select name="classificacao" id="game_parental_rating" value="{{jogosEdit.classificacao}}">
+              <option>{{jogosEdit.classificacao}}</option>
+              <option value="18">+18 - Não recomendado para menores de 18 anos</option>
+              <option value="16">+16 - Não recomendado para menores de 16 anos</option>
+              <option value="14">+14 - Não recomendado para menores de 14 anos</option>
+              <option value="12">+12 - Não recomendado para menores de 12 anos</option>
+              <option value="10">+10 - Não recomendado para menores de 10 anos</option>
+              <option value="0">L - Livre para todos os Públicos </option>
+            </select>
+          </div>
+          <div id="generoaAdd">
+            <p>Gênero</p>
+            <select name="genero" id="game_gender" value="{{jogosEdit.genero}}">
+              <option>{{jogosEdit.genero}}</option>
+              <option value="action">Ação</option>
+              <option value="adventure">Aventura</option>
+              <option value="cardgame">Card Game</option>
+              <option value="stealth">Espionagem</option>
+              <option value="rts">Estratégia - RTS</option>
+              <option value="fighting">Luta</option>
+              <option value="mmo"> MMO - Massively Multiplayer Online</option>
+              <option value="moba"> MOBA - Multiplayer Online Battle Arena </option>
+              <option value="openWorld"> Mundo Aberto </option>
+              <option value="music">Musical</option>
+              <option value="plataform">Plataforma</option>
+              <option value="rpg">RPG</option>
+              <option value="horror">Terror</option>
+              <option value="fps">Tiro em Primeira Pessoa - FPS</option>
+              <option value="tps">Tiro em Terceira Pessoa - TPS</option>
+            </select>
+          </div>
+        </div>
+        <div id="descricaoAdd">
+          <p>Descrição do Jogo</p>
+          <textarea type="text" name="descricao" id="game_description"
+            value="{{jogosEdit.descricao}}">{{jogosEdit.descricao}}</textarea>
+        </div>
+        <div id="midiaAdd">
+          <h2>Mídia</h2>
+          </br>
+          <p>Trailer URL</p>
+          <input type="text" placeholder="URL do Trailer" name="trailler" id="game_trailer"
+            value="{{jogosEdit.trailler}}">
+          <p>Imagem URL</p>
+          <input type="text" placeholder="URL da Imagem" name="imagemLink" id="game_img"
+            value="{{jogosEdit.imagemLink}}">
+          <p>Logo URL</p>
+          <input type="text" placeholder="URL da Logo" name="logoLink" id="game_logo" value="{{jogosEdit.logoLink}}">
+        </div>
+
+
+      </div>
+      <button type="submit" id="botao-aplicar-edicao">Aplicar mudanças ao Título no catálogo</button>
+      <button a href="/gerenciar-jogos" id="botao-editando-cancel">Cancelar</button>
+    </form>
+
+    </div>
+
+    </form>
+    {% endif %}
+
+
+
+  </table>
+  <br>
+
+
+
+  <!--FOOTER CONTENT-->
+  <div id="foot"></div>
+</body>
+
+<script src="../static/js/script.js"></script>
+
+</html>

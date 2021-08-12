@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMEFLIX | Adicionar Títulos</title>
+  <link rel="shortcut icon" href="../static/img/favicon.ico">
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+<body>
+  <!--HEADER CONTENT-->
+  <div id="nav"></div>
+
+  <div class="logomarca">
+    <img src="/static/img/logomarca.svg" alt="Logomarca Gameflix">
+  </div>
+
+  <!--MAIN CONTENT-->
+
+  <form action="/new" method="POST">
+    <div class="infoJogo">
+
+      <div id="nomeAdd">
+        <input type="text" placeholder="Nome do título" name="nomeJogo" required id="game_name">
+      </div>
+
+      <div id="produtoraAdd">
+        <input type="text" placeholder="Produtora" name="produtora" required id="game_producer">
+      </div>
+
+      <div id="lacamentoAdd">
+        <p>Lançamento</p>
+        <input id="ano" type="number" value="2021" name="dataLancamento">
+      </div>
+
+      <div id="notaAdd">
+        <p>Nota Metacritic</p>
+        <input type="number" placeholder="0-100 " name="notaMetric" id="game_grade" required>
+      </div>
+      <div class="caixasdeOpcoes">
+        <div id="idadeRecomendadaAdd">
+          <p>Classificação Indicativa</p>
+          <select name="classificacao" id="game_parental_rating">
+            <option>Classificação Indicativa</option>
+            <option value="18">+18 - Não recomendado para menores de 18 anos</option>
+            <option value="16">+16 - Não recomendado para menores de 16 anos</option>
+            <option value="14">+14 - Não recomendado para menores de 14 anos</option>
+            <option value="12">+12 - Não recomendado para menores de 12 anos</option>
+            <option value="10">+10 - Não recomendado para menores de 10 anos</option>
+            <option value="0">L - Livre para todos os Públicos </option>
+          </select>
+        </div>
+        <div id="generoaAdd">
+          <p>Gênero</p>
+          <select name="genero" id="game_gender">
+            <option>Selecione um ou mais gêneros</option>
+            <option value="action">Ação</option>
+            <option value="adventure">Aventura</option>
+            <option value="cardgame">Card Game</option>
+            <option value="stealth">Espionagem</option>
+            <option value="rts">Estratégia - RTS</option>
+            <option value="fighting">Luta</option>
+            <option value="mmo"> MMO - Massively Multiplayer Online</option>
+            <option value="moba"> MOBA - Multiplayer Online Battle Arena </option>
+            <option value="openWorld"> Mundo Aberto </option>
+            <option value="music">Musical</option>
+            <option value="plataform">Plataforma</option>
+            <option value="rpg">RPG</option>
+            <option value="horror">Terror</option>
+            <option value="fps">Tiro em Primeira Pessoa - FPS</option>
+            <option value="tps">Tiro em Terceira Pessoa - TPS</option>
+          </select>
+        </div>
+      </div>
+      <div id="descricaoAdd">
+        <p>Descrição do Jogo</p>
+        <textarea style="resize: none" type="text" placeholder="Descrição do jogo..." name="descricao" id="game_description"
+          required></textarea>
+      </div>
+
+
+      <div id="midiaAdd">
+        <h2>Mídia</h2>
+      </br>
+      <p>Trailer URL</p>
+        <input type="text" placeholder="URL do Trailer" name="trailler" required id="game_trailer">
+      <p>Imagem URL</p>
+        <input type="text" placeholder="URL da Imagem" name="imagemLink" required id="game_img">
+      <p>Logo URL</p>
+        <input type="text" placeholder="URL da Logo" name="logoLink" required id="game_logo">
+      </div>
+
+
+    </div>
+    <button type="submit" class="botao-cadastro">Adicionar Título ao catálogo</button>
+
+  </form>
+
+  <!--FOOTER CONTENT-->
+  <div id="foot"></div>
+
+</body>
+
+<script src="../static/js/script.js"></script>
+
+</html>
